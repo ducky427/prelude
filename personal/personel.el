@@ -96,5 +96,9 @@
  '(js2-bounce-indent-p t)
 )
 
+;; Elixir
+(prelude-require-package 'elixir-mode)
+(prelude-require-package 'alchemist)
+
 (provide 'personal)
 ;;; personal.el ends here
