@@ -100,5 +100,10 @@
 (prelude-require-package 'elixir-mode)
 (prelude-require-package 'alchemist)
 
+;; For HyLang
+(prelude-require-package 'hy-mode)
+(add-hook 'hy-mode-hook #'smartparens-strict-mode)
+(add-hook 'hy-mode-hook #'rainbow-delimiters-mode)
+
 (provide 'personal)
 ;;; personal.el ends here
