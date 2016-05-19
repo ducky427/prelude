@@ -84,7 +84,7 @@
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
 
-(add-hook 'web-mode-hook  'my-web-mode-hook)
+(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; F Sharp
 ;; (prelude-require-package 'fsharp-mode)
@@ -104,6 +104,13 @@
 (prelude-require-package 'hy-mode)
 (add-hook 'hy-mode-hook #'smartparens-strict-mode)
 (add-hook 'hy-mode-hook #'rainbow-delimiters-mode)
+
+;; For clj-refactor
+(prelude-require-package 'clj-refactor)
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)))
+
 
 (provide 'personal)
 ;;; personal.el ends here
