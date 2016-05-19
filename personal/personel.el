@@ -112,5 +112,7 @@
                                (clj-refactor-mode 1)))
 
 
+(require 'prelude-helm-everywhere)
+
 (provide 'personal)
 ;;; personal.el ends here
