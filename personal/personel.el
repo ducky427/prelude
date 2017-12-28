@@ -21,7 +21,7 @@
 
 
 ;; FONTS
-(setq default-frame-alist '((font . "Source Code Pro-13") (width . 120) (height . 40)))
+(setq default-frame-alist '((font . "Source Code Pro-16") (width . 120) (height . 40)))
 ;; (add-to-list 'default-frame-alist '(font .  "Source Code Pro-13" ))
 ;; (set-frame-font   "Source Code Pro-13" nil t)
 
