@@ -43,11 +43,11 @@
 
 
 ;; python virtualenv wrapper
-(prelude-require-packages '(virtualenv virtualenvwrapper))
-(require 'virtualenvwrapper)
-(venv-initialize-interactive-shells) ;; if you want interactive shell support
+;; (prelude-require-packages '(virtualenv virtualenvwrapper))
+;; (require 'virtualenvwrapper)
+;; (venv-initialize-interactive-shells) ;; if you want interactive shell support
 ;; (venv-initialize-eshell) ;; if you want eshell support
-(setq venv-location "~/.virtualenvs")
+;; (setq venv-location "~/.virtualenvs")
 
 ;; Python
 ;; see: https://github.com/gabrielelanaro/emacs-for-python
@@ -110,6 +110,28 @@
 (require 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)))
+
+;; For go-lang
+;; https://johnsogg.github.io/emacs-golang
+(prelude-require-package 'go-autocomplete)
+
+;; For neo-tree
+(prelude-require-package 'neotree)
+
+(defun neotree-project-dir ()
+    "Open NeoTree using the git root."
+    (interactive)
+    (let ((project-dir (projectile-project-root))
+          (file-name (buffer-file-name)))
+      (neotree-toggle)
+      (if project-dir
+          (if (neo-global--window-exists-p)
+              (progn
+                (neotree-dir project-dir)
+                (neotree-find file-name)))
+        (message "Could not find git project root."))))
+
+(global-set-key [f8] 'neotree-project-dir)
 
 
 (require 'prelude-helm-everywhere)
