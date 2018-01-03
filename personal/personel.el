@@ -58,10 +58,10 @@
 (global-git-gutter-mode 1)
 
 ;; yasnippet
-(prelude-require-package 'yasnippet)
-(prelude-require-package 'clojure-snippets)
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (prelude-require-package 'yasnippet)
+;; (prelude-require-package 'clojure-snippets)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
 
 ;; Allow hash to be entered
 ;; http://jimbarritt.com/non-random/2010/11/07/typing-the-pound-or-hash-key-in-emacs-on-uk-macbook/
@@ -114,6 +114,10 @@
 ;; For go-lang
 ;; https://johnsogg.github.io/emacs-golang
 (prelude-require-package 'go-autocomplete)
+(prelude-require-package 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
 
 ;; For neo-tree
 (prelude-require-package 'neotree)
