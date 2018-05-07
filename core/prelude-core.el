@@ -1,6 +1,6 @@
 ;;; prelude-core.el --- Emacs Prelude: Core Prelude functions.
 ;;
-;; Copyright © 2011-2017 Bozhidar Batsov
+;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -156,7 +156,7 @@ With a prefix ARG updates all installed packages."
                             (epl-installed-packages))))
     (message "Update finished. Restart Emacs to complete the process.")))
 
-;;; Emacs in OSX already has fullscreen support
+;;; Emacs in macOS already has fullscreen support
 ;;; Emacs has a similar built-in command in 24.4
 (defun prelude-fullscreen ()
   "Make Emacs window fullscreen.
